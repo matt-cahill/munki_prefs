@@ -1,0 +1,15 @@
+{
+  "name": "mattcahill-munki_prefs",
+  "version": "0.1.0",
+  "author": "Matt Cahill",
+  "summary": "Manages client preferences for Munki software deployment tool for Mac",
+  "license": "Apache-2.0",
+  "source": "https://github.com/matt-cahill/munki_prefs",
+  "project_page": "https://github.com/matt-cahill/munki_prefs",
+  "issues_url": "https://github.com/matt-cahill/munki_prefs/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
