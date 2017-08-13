@@ -44,7 +44,8 @@
 # If true, updates that declare no "must-close" applications, 
 # or have one or more "must-close" applications, none of which is running, 
 # and do not require a logout or restart will be installed as part of a 
-# normal periodic background run without notifying the user. (OS X 10.10+, Munki 2.5+)
+# normal periodic background run without notifying the user. 
+# (OS X 10.10+, Munki 2.5+)
 #   Default Value: false
 #
 # * `softwareupdateserverurl`
@@ -87,158 +88,165 @@
 # Specific filename to use when requesting custom client resources.
 # Default Value: Empty String
 # 
-# 
 # * `helpurl`
-# If defined, a URL to open/display when the user selects "Managed Software Center Help" from Managed Software Center's Help menu.
+# If defined, a URL to open/display when the user selects 
+# "Managed Software Center Help" from Managed Software Center's Help menu.
 #   Default Value: Empty String
-# 
 # 
 # * `clientidentifier`
-# Identifier for Munki client. Usually is the same as a manifest name on the Munki server. If this is empty or undefined, Munki will attempt the following identifiers, in order: fully-qualified hostname, "short" hostname, serial number and finally, "site_default"
+# Identifier for Munki client. Usually is the same as a manifest name
+# on the Munki server. If this is empty or undefined, 
+# Munki will attempt the following identifiers, 
+# in order: fully-qualified hostname, "short" hostname,
+# serial number, and finally "site_default".
 #   Default Value: Empty String
-# 
 # 
 # * `managedinstalldir`
 # Folder where Munki keeps its data on the client.
 #   Default Value: '/Library/Managed Installs'
 # 
-# 
 # * `logfile`
-# Primary log is written to this file. Other logs are written into the same directory as this file.
+# Primary log is written to this file. Other logs are 
+# written into the same directory as this file.
 #   Default Value: '/Library/Managed Installs/Logs/ManagedSoftwareUpdate.log'
-# 
 # 
 # * `logtosyslog`
 # If true, log to syslog in addition to ManagedSoftwareUpdate.log.
 #   Default Value: false
 # 
-# 
 # * `logginglevel`
 # Higher values cause more detail to be written to the primary log.
 #   Default Value: 1
 # 
-# 
 # * `daysbetweennotifications`
-# Number of days between user notifications from Managed Software Center. Set to 0 to have Managed Software Center notify every time a background check runs if there are available updates.
+# Number of days between user notifications from Managed Software Center.
+# Set to 0 to have Managed Software Center notify every time a 
+# background check runs if there are available updates.
 #   Default Value: 1
 # 
-# 
 # * `usenotificationcenterdays`
-# (New in Munki 3) Number of days Notification Center notifications should be used before switching to launching Managed Software Center. See Notification Center Support.
+# (New in Munki 3) Number of days Notification Center notifications 
+# should be used before switching to launching Managed Software Center.
 #   Default Value: 3
 # 
-# 
 # * `useclientcertificate`
-# If true, use an SSL client certificate when communicating with the Munki server. Requires an https:// URL for the Munki repo. See ClientCertificatePath for details.
+# If true, use an SSL client certificate when communicating with 
+# the Munki server. Requires an https:// URL for the Munki repo.
 #   Default Value: false
-# 
 # 
 # * `useclientcertificatecnasclientidentifier`
-# If true, use the CN of the client certificate as the Client Identifier.Used in combination with the UseClientCertificate key.
+# If true, use the CN of the client certificate as the Client Identifier.
+# Used in combination with the UseClientCertificate key.
 #   Default Value: false
 # 
-# 
 # * `softwarerepocapath`
-# Path to the directory that stores your CA certificate(s). See the curl man page for more details on this parameter.
+# Path to the directory that stores your CA certificate(s). 
+# See the curl man page for more details on this parameter.
 #   Default Value: Empty String
-# 
 # 
 # * `softwarerepocacertificate`
 # Absolute path to your CA Certificate.
 #   Default Value: Empty String
 # 
-# 
 # * `clientcertificatepath`
-# Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted.
+# Absolute path to a client certificate. 
+# There are 3 defaults for this key. Concatenated cert/key PEM 
+# file accepted.
 #   Default Value: Empty String
-# 
 # 
 # * `clientkeypath`
 # Absolute path to a client private key.
 #   Default Value: Empty String
 # 
-# 
 # * `additionalhttpheaders`
-# This key provides the ability to specify custom HTTP headers to be sent with all curl() HTTP requests. AdditionalHttpHeaders must be an array of strings with valid HTTP header format.
+# This key provides the ability to specify custom HTTP headers 
+# to be sent with all curl() HTTP requests. AdditionalHttpHeaders 
+# must be an array of strings with valid HTTP header format.
 #   Default Value: Empty Array
 # 
-# 
 # * `packageverificationmode`
-# Controls how Munki verifies the integrity of downloaded packages. Possible values are: none: No integrity check is performed. hash: Integrity check is performed if package info contains checksum information. hash_strict: Integrity check is performed, and fails if package info does not contain checksum information.
+# Controls how Munki verifies the integrity of downloaded packages. 
+# Possible values are: 
+#   none: No integrity check is performed. 
+#   hash: Integrity check is performed if package info contains 
+#     checksum information. 
+#   hash_strict: Integrity check is performed, 
+#     and fails if package info does not contain checksum information.
 #   Default Value: 'hash'
 # 
-# 
 # * `suppressusernotification`
-# If true, Managed Software Center will never notify the user of available updates. Managed Software Center can still be manually invoked to discover and install updates.
+# If true, Managed Software Center will never notify the user 
+# of available updates. Managed Software Center can still be 
+# manually invoked to discover and install updates.
 #   Default Value: false
-# 
 # 
 # * `suppressautoinstall`
 # If true, Munki will not automatically install or remove items.
 #   Default Value: false
 # 
-# 
 # * `suppressloginwindowinstall`
-# If true, Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall.
+# If true, Munki will not install items while idle at 
+# the loginwindow except for those marked for unattended_install 
+# or unattended_uninstall.
 #   Default Value: false
-# 
 # 
 # * `suppressstopbuttononinstall`
-# If true, Managed Software Center will hide the stop button while installing or removing software, preventing users from interrupting the install.
+# If true, Managed Software Center will hide the stop button 
+# while installing or removing software, preventing users 
+# from interrupting the install.
 #   Default Value: false
-# 
 # 
 # * `installrequireslogout`
-# If true, Managed Software Center will require a logout for all installs or removals.
+# If true, Managed Software Center will require a logout 
+# for all installs or removals.
 #   Default Value: false
-# 
 # 
 # * `showremovaldetail`
-# If true, Managed Software Center will display detail for scheduled removals.
+# If true, Managed Software Center will display detail for 
+# scheduled removals.
 #   Default Value: false
-# 
 # 
 # * `msulogenabled`
-# Log user actions in the GUI. See [MSU-Logging]
+# Log user actions in the GUI.
 #   Default Value: false
-# 
 # 
 # * `msudebuglogenabled`
-# Debug logging for Managed Software Center. See [MSU-Logging]
+# Debug logging for Managed Software Center.
 #   Default Value: false
-# 
 # 
 # * `localonlymanifest`
-# Defines the name of your LocalOnlyManifest. Setting this activates the feature. Unsetting it means Munki will remove the file on the next run. See LocalOnlyManifest
+# Defines the name of your LocalOnlyManifest. Setting this 
+# activates the feature. Unsetting it means Munki will remove
+# the file on the next run.
 #   Default Value: Empty String
-# 
 # 
 # * `followhttpredirects`
-# Defines whether Munki will follow all, some or no redirects from the web server. See FollowHTTPRedirects
+# Defines whether Munki will follow all, some or no redirects 
+# from the web server.
 #   Default Value: 'none'
 # 
-# 
 # * `ignoresystemproxies`
-# If true, HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly.
+# If true, HTTP and/or HTTPS proxies set system-wide will be 
+# ignored, connections will be made directly.
 #   Default Value: false
-# 
 # 
 # * `performauthrestarts`
-# (New in Munki 3) If true, Munki will attempt to perform a filevault auth restart. See Authorized-Restarts.
+# (New in Munki 3) If true, Munki will attempt to perform a 
+# filevault auth restart.
 #   Default Value: false
 # 
-# 
 # * `recoverykeyfile`
-# (New in Munki 3) Absolute path to a plist file containing filevault credentials in key/value format. Used to perform auth restarts. See Authorized-Restarts.
+# (New in Munki 3) Absolute path to a plist file containing 
+# filevault credentials in key/value format. 
+# Used to perform auth restarts.
 #   Default Value: Empty String
-# 
 # 
 # Variables
 # ----------
 #
 # There are no required variables for this class, however applying it
-# without customising the relevent parameters shown above will result
-# in the same file that Munki would write out by itself anyway.
+# without customising any of the relevent parameters for your environemnt
+# will result in the same file that Munki would write out by itself anyway.
 # 
 # Examples
 # --------
